@@ -1,134 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber Password Checker</title>
+<title>Password Strength Checker</title>
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(-45deg,#ff0080,#7928ca,#2afadf,#00f2fe);
-    background-size:400% 400%;
-    animation:bg 10s ease infinite;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#ff0080,#7928ca,#2afadf,#00f2fe);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
 }
 
 @keyframes bg{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-.card{
-    width:400px;
-    padding:35px;
-    border-radius:25px;
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(15px);
-    text-align:center;
-    color:white;
-    box-shadow:0 0 30px rgba(255,255,255,0.3);
-    animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-}
-
-.icon{
-    font-size:55px;
-    animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.2);}
-    100%{transform:scale(1);}
+.container{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:25px;
+text-align:center;
+color:white;
+width:400px;
+box-shadow:0 0 25px rgba(255,255,255,0.3);
 }
 
 h1{
-    margin:15px 0;
-    text-shadow:0 0 20px white;
-}
-
-p{
-    margin-bottom:20px;
+margin-bottom:20px;
+font-size:32px;
 }
 
 input{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    outline:none;
-    margin-bottom:15px;
-    font-size:16px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+margin:15px 0;
+font-size:16px;
 }
 
 button{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    color:white;
-    background:linear-gradient(45deg,#ff0080,#7928ca);
-    transition:0.4s;
+padding:12px 25px;
+border:none;
+border-radius:10px;
+background:white;
+color:#7928ca;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 25px #fff;
+transform:scale(1.1);
 }
 
-.footer{
-    margin-top:15px;
-    font-size:13px;
-    opacity:0.8;
-}
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="container">
+<h1>🔐 Password Checker</h1>
 
-    <div class="icon">🔐</div>
-
-    <h1>Password Checker</h1>
-
-    <p>Check how strong your password is</p>
-
-    <form action="/check" method="POST">
-
-        <input
-            type="password"
-            name="password"
-            placeholder="Enter Password"
-            required>
-
-        <button type="submit">
-            🚀 Check Strength
-        </button>
-
-    </form>
-
-    <div class="footer">
-        Cyber Security Toolkit
-    </div>
+<form action="/check" method="POST">
+<input type="password" name="password" placeholder="Enter Password" required>
+<br>
+<button type="submit">Check Strength</button>
+</form>
 
 </div>
 
